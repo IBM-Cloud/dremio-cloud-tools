@@ -32,8 +32,8 @@ coordinator:
   # CPU & Memory
   # Memory allocated to each coordinator, expressed in MB.
   # CPU allocated to each coordinator, expressed in CPU cores.
-  cpu: 15
-  memory: 122800
+  cpu: 2
+  memory: 4096
 
   # This count is used for slave coordinators only.
   # The total number of coordinators will always be count + 1.
@@ -42,7 +42,7 @@ coordinator:
   # Coordinator data volume size (applies to the master coordinator only).
   # In most managed Kubernetes environments (AKS, GKE, etc.), the size of the disk has a direct impact on
   # the provisioned and maximum performance of the disk.
-  volumeSize: 128Gi
+  volumeSize: 20Gi
 
   # Uncomment the lines below to use a custom set of extra startup parameters for the coordinator.
   #extraStartParams: >-
@@ -118,8 +118,8 @@ executor:
   # CPU & Memory
   # Memory allocated to each executor, expressed in MB.
   # CPU allocated to each executor, expressed in CPU cores.
-  cpu: 15
-  memory: 122800
+  cpu: 2
+  memory: 4096
 
   # Engines
   # Engine names be 47 characters or less and be lowercase alphanumber characters or '-'.
@@ -128,7 +128,7 @@ executor:
   count: 3
 
   # Executor volume size.
-  volumeSize: 128Gi
+  volumeSize: 20Gi
 
   # Uncomment the lines below to use a custom set of extra startup parameters for executors.
   #extraStartParams: >-
@@ -170,7 +170,7 @@ executor:
     #   size: 100Gi
     #   storageClass: "local-nvme"
     volumes:
-    - size: 100Gi
+    - size: 20Gi
 
   # These values, when defined and not empty, override the provided shared annotations, labels, node selectors, or tolerations.
   # Uncomment only if you are trying to override the chart's shared values.
@@ -247,7 +247,7 @@ zookeeper:
   memory: 1024
   count: 3
 
-  volumeSize: 10Gi
+  volumeSize: 5Gi
 
   # Uncomment this value to use a different storage class for Zookeeper.
   #storageClass:
